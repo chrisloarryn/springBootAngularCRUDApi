@@ -1,0 +1,27 @@
+<div class="container col-md-6">
+  <div class="card">
+    <div class="card-header">
+      <h3>Modificar Datos</h3>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="employeForm" action="">
+        <div class="form-group">
+          <label for="">Nombre:</label>
+          <input formControlName="name" name="name" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Apellido:</label>
+          <input formControlName="apellidos" name="apellidos" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Cuenta:</label>
+          <input formControlName="cuenta" name="cuenta" type="text" class="form-control">
+        </div>
+        <button (click)="Actualizar()" [disabled]="employeForm.invalid"
+                [ngClass]="employeForm.invalid ? 'disabled not-allowed' : ''" class="btn btn-danger">
+          Actualizar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

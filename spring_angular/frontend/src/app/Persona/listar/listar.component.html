@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h3>Lista de Empleados</h3>
+    </div>
+    <div class="card-body">
+      <table class="table table-hover">
+        <thead>
+        <tr class="text-center">
+          <th>ID</th>
+          <th>NOMBRE</th>
+          <th>APELLIDO</th>
+          <th>CUENTA</th>
+          <th>ACCIONES</th>
+        </tr>
+        </thead>
+        <tr *ngIf="!personas" colspan="5">
+          <div class="clearfix" style="margin-top: 10px; margin-left: 25px">
+            <div class="spinner-border float-right" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+        </tr>
+        <!--        -->
+        <tbody *ngIf="personas">
+        <tr *ngFor="let employee of personas" class="text-center">
+          <td>{{employee.id}}</td>
+          <td>{{employee.name}}</td>
+          <td>{{employee.apellidos}}</td>
+          <td>{{employee.cuenta}}</td>
+          <td>
+            <button (click)="Editar(employee)" class="btn btn-warning">Editar</button>
+            <button (click)="Delete(employee)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
