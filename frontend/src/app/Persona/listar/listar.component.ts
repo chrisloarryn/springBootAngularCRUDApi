@@ -11,13 +11,16 @@ import {Persona} from 'src/app/Modelo/Persona';
 export class ListarComponent implements OnInit {
 
   personas: Persona[];
+  isLoading: boolean;
 
   constructor(private service: ServiceService, private router: Router) {
   }
 
   ngOnInit() {
+    this.isLoading = true;
     this.service.getPersonas()
       .subscribe(data => {
+        if (data.length === 0) { this.isLoading = false; }
         this.personas = data;
       });
   }

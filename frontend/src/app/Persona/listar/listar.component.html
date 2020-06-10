@@ -14,15 +14,24 @@
           <th>ACCIONES</th>
         </tr>
         </thead>
-        <tr *ngIf="!personas" colspan="5">
-          <div class="clearfix" style="margin-top: 10px; margin-left: 25px">
-            <div class="spinner-border float-right" role="status">
-              <span class="sr-only">Loading...</span>
+        <tr *ngIf="!personas">
+          <td colspan="5">
+            <div class="d-flex justify-content-center">
+              <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
             </div>
-          </div>
+          </td>
         </tr>
         <!--        -->
-        <tbody *ngIf="personas">
+        <tbody *ngIf="!isLoading">
+        <tr class="text-center">
+          <td colspan="5">
+            Sin empleados registrados...
+          </td>
+        </tr>
+        </tbody>
+        <tbody *ngIf="personas && isLoading">
         <tr *ngFor="let employee of personas" class="text-center">
           <td>{{employee.id}}</td>
           <td>{{employee.name}}</td>
