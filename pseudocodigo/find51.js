@@ -19,7 +19,36 @@ const OrderArray = (list) => list.sort((a, b) => a - b)
 
 
 /*
+    existeFunction (!numero_a_buscar) return mensaje(`no hay numero a buscar`)
+
+    Validar tipoArray
+    Validar Int
+
+    // valido existencia
+    for (let item of array) !!item === numero_a_buscar
+
+    ordeno Array de forma desc/asc /// como?
+
+    ///////////////////////////////////////////////////////////////////
+    busque el MAX(8) ¿?
+    (FOR) menor_diferencia entre MAX-n
+        // recursividad, pseudocodigo(como ordeno el array)
+
+
+    Buscar numero
+        Cuando Num === numero_a_buscar return Verdadero
+    ///////////////////////////////////////////////////////////////////
+
+
+
+
+ */
+
+/*
 Console Logs
  */
 console.log('FindFn::', findByNumber(array, numToFind));
 console.log('OrderFn::', OrderArray(array))
+//npm install -g @angular/cli
+// ng update @angular/cli @angular/core
+
